@@ -1,0 +1,7 @@
+{
+  "name": "wariMobile",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

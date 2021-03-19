@@ -1,0 +1,90 @@
+<ion-app>
+  <ion-split-pane when="sm" content-id="main-content">
+    <div class="ion-page" id="main-content">
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+
+            <ion-button [routerLink]="['/menu']">
+              <ion-icon name="home"></ion-icon>
+            </ion-button>
+
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="padding">
+        <ion-segment  value="sender">
+          <ion-segment-button (click)="onSelect('emeteur')" value="sender">
+            <ion-label>Emetteur</ion-label>
+          </ion-segment-button>
+          <ion-segment-button (click)="onSelect('beneficiaire')"  value="receiver">
+            <ion-label>Bénéficiaire</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+
+        <ion-grid>
+          <ion-row>
+            <ion-col size-sm="6" offset-sm="3">
+                <form [formGroup]="FormDepot" (ngSubmit)="presentAlertConfirm()">
+                  <div *ngIf="isEmit=='emeteur'">
+                    <ion-item>
+                      <ion-label class="test" position="floating">N° CNI</ion-label>
+                      <ion-input class="test" type="text" formControlName="CNI"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label class="test" position="floating">Nom Complet</ion-label>
+                      <ion-input class="test" type="text" formControlName="nomCompletEmetteur"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label class="test" position="floating">Telephone</ion-label>
+                      <ion-input class="test" type="text" formControlName="phoneEmetteur"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label class="test" position="floating">Montant</ion-label>
+                      <ion-input class="test" type="number" [(ngModel)]="montant" formControlName="montant" (keyup)="calculateur()"></ion-input>
+                    </ion-item>
+                    <ion-grid>
+                      <ion-row>
+                        <ion-col size="12">
+                          <ion-item class="ion-float-right">
+                            <ion-label class="test" position="floating">frais</ion-label>
+                            <ion-input class="test" type="number" [(ngModel)]="frais" readOnly formControlName="frais"></ion-input>
+                          </ion-item>
+                        </ion-col>
+                        <ion-col size="12">
+                          <ion-item class="ion-margin-bottom">
+                            <ion-label class="test" position="floating">Total</ion-label>
+                            <ion-input class="test" type="number" [(ngModel)]="total" readOnly formControlName="total"></ion-input>
+                          </ion-item>
+                        </ion-col>
+                      </ion-row>
+                    </ion-grid>
+        <!--            <ion-button (click)="onSelect()"  type="submit" shape="round" expand="block">Suivant</ion-button>-->
+                  </div>
+                  <div *ngIf="isEmit=='beneficiaire'">
+                    <ion-item>
+                      <ion-label class="test" position="floating">NomComplet</ion-label>
+                      <ion-input class="test" type="text" formControlName="nomCompletBeneficiaire"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label class="test" position="floating">Phone</ion-label>
+                      <ion-input class="test" type="text" formControlName="phoneBeneficiaire"></ion-input>
+                    </ion-item>
+        <!--            <ion-item>-->
+        <!--              <ion-label class="test" position="floating">CNI</ion-label>-->
+        <!--              <ion-input class="test" type="text"></ion-input>-->
+        <!--            </ion-item>-->
+                  </div>
+                  <ion-button class="ion-margin-top" type="submit" shape="round" [disabled]="FormDepot.invalid" expand="block">Envoyer</ion-button>
+                </form>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-content>
+
+    </div>
+
+  </ion-split-pane>
+</ion-app>
+<!--   Segment with default selection-->
+

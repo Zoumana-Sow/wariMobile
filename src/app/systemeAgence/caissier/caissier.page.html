@@ -30,10 +30,6 @@
               <ion-icon slot="start" [src]="'./assets/icon/commis.svg'"></ion-icon>
               Commissitions
             </ion-item>
-            <ion-item button="calculator-frais" [routerLink]="['./calculator-frais']">
-              <ion-icon slot="start" name="calculator"></ion-icon>
-              Calculateur
-            </ion-item>
             <ion-item button="deconnexion" (click)="Deconnecte()">
               <ion-icon slot="start" [src]="'./assets/icon/exit.svg'" style="color: #FA4A0C;"></ion-icon>
               Déconnexion
@@ -54,33 +50,19 @@
             </ion-menu-toggle>
           </ion-buttons>
           <ion-title>
-            <img style="width: 30px; height: 30px;" src="./assets/logo.jpeg" class="ion-icon ion-align-items-center">
+            <img style="width: 30px; height: 30px;" src="./assets/money_logo.png" class="ion-icon">
           </ion-title>
           <ion-item slot="end">
-            <ion-grid>
-              <ion-row>
-                <ion-col sizeSm="2">
-                  <ion-avatar>
-<!--                    <img class="image" src="./assets/avatar.png">-->
-                   <img class="image"  [src]="converted_image" >
-<!--                    {{avatar}}-->
-                  </ion-avatar>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-
+            <ion-avatar>
+<!--              {{avatar}}-->
+            </ion-avatar>
           </ion-item>
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">
         <ion-card>
           <ion-grid >
-            <ion-card-header class="affiche">
-              <ion-card-subtitle class="ion-padding card">Mon solde disponible</ion-card-subtitle>
-              <ion-card-title class="ion-padding card-title">{{solde}} F CFA </ion-card-title>
-              <ion-card-subtitle class="ion-padding last-card">
-                {{date |  date: 'd MMM y'}}
-              </ion-card-subtitle>
+            <ion-card-header>
             </ion-card-header>
           </ion-grid>
         </ion-card>
@@ -90,58 +72,38 @@
         <ion-grid>
           <ion-row>
             <ion-col sizeSm="8">
-              <ion-item button="depot" routerLink='depot' class="ion-no-padding">
-                <ion-icon slot="start" name="return-up-forward-outline"></ion-icon>
-                Depot
+              <ion-item button="transaction" routerLink='transaction' class="ion-no-padding ">
+                <ion-icon slot="start" [src]="'./assets/icon/transaction.svg'" style="color: #FA4A0C;"></ion-icon>
+                Ajout Users
               </ion-item>
             </ion-col>
           </ion-row>
-
-          <ion-row>
-            <ion-col sizeSm="8">
-              <ion-item button="retrait" routerLink='retrait' class="ion-no-padding">
-                <ion-icon slot="start" name="return-up-back-outline"></ion-icon>
-                Retrait
-              </ion-item>
-            </ion-col>
-          </ion-row>
-
           <ion-row>
             <ion-col sizeSm="8">
               <ion-item button="transaction" routerLink='transaction' class="ion-no-padding ">
                 <ion-icon slot="start" [src]="'./assets/icon/transaction.svg'" style="color: #FA4A0C;"></ion-icon>
-                Mes transactions
+                Listes Users
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col sizeSm="8">
+              <ion-item button="depot" routerLink='depot-caissier' class="ion-no-padding">
+                <ion-icon slot="start" [src]="'./assets/icon/depot.svg'" style="color: #FA4A0C;"></ion-icon>
+                   Depot Agence
               </ion-item>
             </ion-col>
           </ion-row>
 
-<!--          <ion-row>-->
-<!--            <ion-col sizeSm="8">-->
-<!--              <ion-item button="transac" routerLink='transaction' class="ion-no-padding">-->
-<!--                <ion-icon slot="start" [src]="'./assets/icon/all-transaction.svg'" style="color: #FA4A0C;"></ion-icon>-->
-<!--                Toutes les transactions-->
-<!--              </ion-item>-->
-<!--            </ion-col>-->
-<!--          </ion-row>-->
-
-<!--          <ion-row>-->
-<!--            <ion-col sizeSm="8">-->
-<!--              <ion-item button="commission" routerLink='commission' class="ion-no-padding">-->
-<!--                <ion-icon slot="start" [src]="'./assets/icon/commis.svg'" style="color: #FA4A0C;"></ion-icon>-->
-<!--                Mes commissions-->
-<!--              </ion-item>-->
-<!--            </ion-col>-->
-<!--          </ion-row>-->
 
           <ion-row>
             <ion-col sizeSm="8">
-              <ion-item button="calculator-frais" routerLink='calculator-frais' class="ion-no-padding">
-                <ion-icon slot="start" [src]="'./assets/icon/calculator.svg'" style="color: #FA4A0C;"></ion-icon>
-                Calculateur de frais
+              <ion-item button="transac" routerLink='transaction' class="ion-no-padding">
+                <ion-icon slot="start" [src]="'./assets/icon/all-transaction.svg'" style="color: #FA4A0C;"></ion-icon>
+                Parametres
               </ion-item>
             </ion-col>
           </ion-row>
-
           <ion-row>
             <ion-col sizeSm="8">
               <ion-item class="ion-no-padding" button="deconnexion" (click)="Deconnecte()">
@@ -163,14 +125,9 @@
           <ion-label>Historique</ion-label>
         </ion-tab-button>
 
-<!--        <ion-tab-button tab="tab3">-->
-<!--          <ion-icon name="information-circle-outline"></ion-icon>-->
-<!--          <ion-label>Info</ion-label>-->
-<!--        </ion-tab-button>-->
-
-        <ion-tab-button routerLink='calculator-frais'>
-          <ion-icon name="calculator"></ion-icon>
-          <ion-label>Calculator</ion-label>
+        <ion-tab-button tab="tab3">
+          <ion-icon name="information-circle-outline"></ion-icon>
+          <ion-label>Info</ion-label>
         </ion-tab-button>
       </ion-tab-bar>
     </div>

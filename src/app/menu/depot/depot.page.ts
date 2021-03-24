@@ -58,8 +58,9 @@ export class DepotPage implements OnInit {
   }
   async succes(data) {
     const alert = await this.alertController.create({
-      header: 'Transfert réussi!!!',
-      subHeader: 'INFOS!!! vous avez envoyé ' + data.date.montant + ' à ' + this.FormDepot.value.nomCompletBeneficiaire + ' le ' + data.date.dateDepot.substr(0, 10),
+      header: 'Transfert réussi !!!',
+      // tslint:disable-next-line:max-line-length
+      subHeader: 'INFOS !!! vous avez envoyé ' + data.date.montant + ' à ' + this.FormDepot.value.nomCompletBeneficiaire + ' le ' + data.date.dateDepot.substr(0, 10),
       message: 'CODE DE TRANSACTION: ' + data.date.codeTransaction,
       buttons: ['OK']
     });

@@ -44,7 +44,10 @@
               password required
             </span>
           </ion-item>
+<!--          <ion-button class="ion-margin-top" expand="block" [hidden]="progress" (click)="logIn()">Se connecter</ion-button>-->
+<!--          <ion-progress-bar class="ion-margin-top" type="indeterminate" [hidden]="!progress"></ion-progress-bar>-->
           <ion-button class="ion-margin-top" type="submit" [disabled]="!loginForm.valid" shape="round" expand="block">Se connecter</ion-button>
+<!--          <ion-spinner name="crescent"></ion-spinner>-->
         </form>
       </ion-col>
     </ion-row>

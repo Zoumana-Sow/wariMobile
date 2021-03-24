@@ -1,23 +1,84 @@
 <ion-app>
-  <ion-split-pane when="sm" content-id="main-content">
+    <ion-split-pane when="sm" content-id="main-content">
 
 
-    <div class="ion-page" id="main-content">
-      <ion-header>
-        <ion-toolbar>
-          <ion-buttons slot="start" [routerLink]="['/menu']">
+      <div class="cont" id="main-content">
+        <div class="haut">
+          <ion-header>
+            <ion-toolbar>
 
-              <ion-button>
-                <ion-icon name="home"></ion-icon>
-              </ion-button>
+              <ion-buttons [routerLink]="['/menu']">
 
-          </ion-buttons>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content class="ion-padding">
+                <ion-button>
+                  <ion-icon name="home"></ion-icon>
+                </ion-button>
+                <div class="menu">
+                  <div class="ion-text-center">
+                    <img src="assets/min_logo.jpeg" alt="">
+                  </div>
+                  <h3 class="ion-text-center">Mes Transactions</h3>
+                  <hr>
+                </div>
+              </ion-buttons>
 
-      </ion-content>
-    </div>
+            </ion-toolbar>
 
-  </ion-split-pane>
-</ion-app>
+          </ion-header>
+        </div>
+
+        <ion-content class="ion-padding">
+          <ion-grid>
+            <ion-row>
+              <ion-col size-sm="6" offset-sm="3">
+
+                <table class="container" id="my-table" >
+                  <thead class="thead-info">
+                  <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Montant</th>
+                  </tr>
+                  </thead>
+                  <tbody >
+                  <tr *ngFor = "let tr of transactions ">
+                    <td >{{tr.dateDepot | date}}</td>
+                    <td >depot</td>
+                    <td >{{tr.montant}}</td>
+                  </tr>
+                  </tbody>
+                </table>
+                <div class="montant w-50">
+                  <div class="total">
+                    <span>Total</span>
+                  </div>
+                  <div class="somme">
+                    <span>{{total}}</span>
+                  </div>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-content>
+
+<!--        <ion-tab-bar slot="bottom">-->
+<!--            <ion-tab-button [routerLink]="['/menu']">-->
+<!--              <ion-icon name="home"></ion-icon>-->
+<!--              <ion-label>Home</ion-label>-->
+<!--            </ion-tab-button>-->
+
+<!--            <ion-tab-button tab="tab2">-->
+<!--              <ion-icon name="time"></ion-icon>-->
+<!--              <ion-label>Historique</ion-label>-->
+<!--            </ion-tab-button>-->
+<!--            <ion-tab-button>-->
+<!--              <ion-icon name="calculator"></ion-icon>-->
+<!--              <ion-label>Calculator</ion-label>-->
+<!--            </ion-tab-button>-->
+<!--          </ion-tab-bar>-->
+
+      </div>
+
+    </ion-split-pane>
+  </ion-app>
+
+

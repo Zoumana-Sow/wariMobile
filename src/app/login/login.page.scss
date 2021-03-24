@@ -3,3 +3,17 @@
   width: 50%;
   margin-left: 20%;
 }
+//ion-loading {
+//  color: deepskyblue;
+//}
+//
+///* Works - pass "my-custom-class" in cssClass to increase specificity */
+//.my-custom-class {
+//  color: deepskyblue;
+//}
+.my-custom-class {
+  --background: #222;
+  --spinner-color: #fff;
+
+  color: #fff;
+}

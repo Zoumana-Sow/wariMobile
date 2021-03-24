@@ -1,0 +1,126 @@
+.cont{
+  width: 100%;
+  height: 93%;
+  background: #f3f3f3;
+}
+.haut {
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 5px;
+  margin: auto;
+  img {
+    width: 40px;
+    height: 40px;
+    margin-top: 10%;
+    margin-left: -10%;
+  }
+  hr {
+    width: 150px;
+    height: 5px;
+    background: #07AEEF;
+    margin-top: -1.5%;
+  }
+}
+
+.container{
+  margin: 5%;
+  width: 90%;
+}
+
+
+.menu{
+  height: 20px;
+  width: 20px;
+  margin-top: 13%;
+  margin-left: 5%;
+  color: #51BFD0
+}
+
+ion-icon{
+  height: 30px;
+  width: 30px;
+  color: #FA4A0C;
+}
+
+
+ion-select{
+  width: 21%;
+  font-size: 70%;
+  float: left;
+  margin-left: 10%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  height: 20px;
+}
+
+.orange{
+  height: 25px;
+  width: 200px;
+  color: white;
+  div{
+    background-color:#FA4A0C;
+    width: 45px;
+    border-radius: 10px;
+    z-index: 1;
+  }
+  .prix{
+    color: #FA4A0C;
+    border-radius: 10px;
+    border: 1px solid #FA4A0C;
+    margin-right: -18px;
+    position: relative;
+  }
+}
+
+h6{
+  margin-top: 0.7px;
+}
+
+
+.montant {
+  position: relative;
+  margin-top: 10px;
+  right: 10%;
+  float: right;
+  height: 20px;
+  border: 1px solid #fa4a0c;
+  box-sizing: border-box;
+  border-radius: 30px;
+
+  .total {
+    width: 50%;
+    background: #fa4a0c;
+    height: 100%;
+    border-radius: 30px;
+    text-align: center;
+    float: left;
+    line-height: 17px;
+    span {
+      font-family: Helvetica;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      color: #ffffff;
+    }
+  }
+  .somme {
+    border-radius: 30px;
+    height: 100%;
+    text-align: center;
+    line-height: 17px;
+    span {
+      font-family: Helvetica;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 11px;
+      color: #000000;
+    }
+  }
+}
+
+
+
+
+

@@ -11,10 +11,17 @@ import {Router} from '@angular/router';
 })
 export class AuthService {
   private  loginUrl = 'http://127.0.0.1:8000/api/login_check';
-
+  private  allusers = 'http://127.0.0.1:8000/api/admin/users';
+  private  Oneuser = 'http://127.0.0.1:8000/api/admin/users/connected';
   constructor(private http: HttpClient, private  storage: Storage, private navCtrl: NavController, private router: Router) { }
   public login(credentials: any): Observable<any>{
     return this.http.post<any>(this.loginUrl, credentials);
+  }
+  public getAllUsers(){
+    return this.http.get(this.allusers);
+  }
+  public getConnected(){
+    return this.http.get(this.Oneuser);
   }
 
   public decodeToken(token: any): string{
@@ -47,5 +54,8 @@ export class AuthService {
   }
   goToHome(){
     this.navCtrl.navigateForward('/menu');
+  }
+  home(){
+    this.navCtrl.navigateForward('/caissier');
   }
 }

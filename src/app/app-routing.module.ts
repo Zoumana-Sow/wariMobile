@@ -22,8 +22,8 @@ const routes: Routes = [
     // canActivate: [AuthGuard]
   },
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    path: 'caissier',
+    loadChildren: () => import('./systemeAgence/caissier/caissier.module').then( m => m.CaissierPageModule)
   }
 
 ];
